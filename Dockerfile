@@ -13,4 +13,4 @@ RUN apt-get update && \
 RUN cd /opt/ && \
     git clone https://github.com/mxe/mxe.git && \
     cd mxe && \
-    make -j$(nproc)
+    make -j$(nproc) gcc cmake qt qt5
