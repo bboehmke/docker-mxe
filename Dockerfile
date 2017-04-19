@@ -14,3 +14,7 @@ RUN cd /opt/ && \
     git clone https://github.com/mxe/mxe.git && \
     cd mxe && \
     make -j$(nproc) gcc cmake qt qt5 MXE_TARGETS='x86_64-w64-mingw32.shared'
+    
+# set PATH
+ENV PATH /opt/mxe/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
