@@ -13,4 +13,4 @@ RUN apt-get update && \
 RUN cd /opt/ && \
     git clone https://github.com/mxe/mxe.git && \
     cd mxe && \
-    make -j$(nproc) gcc cmake qt qt5
+    make -j$(nproc) gcc cmake qt qt5 MXE_TARGETS='x86_64-w64-mingw32.shared'
