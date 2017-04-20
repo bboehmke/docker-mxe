@@ -10,10 +10,12 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+ARG MXE_TARGETS="x86_64-w64-mingw32.shared"
+
 RUN cd /opt/ && \
     git clone https://github.com/mxe/mxe.git && \
     cd mxe && \
-    make -j$(nproc) gcc cmake qt qt5 MXE_TARGETS='x86_64-w64-mingw32.shared'
+    make -j$(nproc) gcc cmake qt qt5 MXE_TARGETS="$MXE_TARGETS"
     
 # set PATH
 ENV PATH /opt/mxe/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
