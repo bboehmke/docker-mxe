@@ -6,9 +6,7 @@ RUN apt-get update && \
         gettext git g++ gperf intltool libffi-dev libgdk-pixbuf2.0-dev \
         libtool libltdl-dev libssl-dev libxml-parser-perl make openssl \
         p7zip-full patch perl pkg-config python ruby scons sed \
-        unzip wget xz-utils g++-multilib libc6-dev-i386 libtool-bin curl && \
-    curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs && \
+        unzip wget xz-utils g++-multilib libc6-dev-i386 libtool-bin && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
