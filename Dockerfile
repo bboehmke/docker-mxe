@@ -13,6 +13,9 @@ RUN apt-get update && \
 ARG MXE_TARGETS="x86_64-w64-mingw32.shared"
 ARG PACKAGES="gcc cmake qt qt5"
 
+ENV MXE_TARGET=$MXE_TARGETS \
+    MXE_BASE_PATH=/opt/mxe/
+
 RUN cd /opt/ && \
     git clone https://github.com/mxe/mxe.git && \
     cd mxe && \
